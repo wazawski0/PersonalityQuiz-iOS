@@ -70,9 +70,28 @@ class QuestionViewController: UIViewController {
         singleStackView.isHidden = false
         questionButton.isHidden = true
         
-        for (index, button) in singleButtons.enumerated() {
+        // Safety check - make sure we have buttons
+        print("Number of buttons in collection: \(singleButtons.count)")
+        print("Number of answers: \(answers.count)")
+        
+        // Only iterate through the buttons we actually have
+        let maxButtons = min(singleButtons.count, answers.count)
+        
+        for index in 0..<maxButtons {
+            let button = singleButtons[index]
             button.setTitle(answers[index].text, for: .normal)
             button.isHidden = false
+            
+            // Style buttons
+            button.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 247/255, alpha: 1.0)
+            button.setTitleColor(.black, for: .normal)
+            button.titleLabel?.numberOfLines = 0
+            button.titleLabel?.lineBreakMode = .byWordWrapping
+            button.contentHorizontalAlignment = .left
+            button.contentEdgeInsets = UIEdgeInsets(top: 12, left: 16, bottom: 12, right: 16)
+            button.layer.cornerRadius = 8
+            
+            print("Button \(index) configured: \(button.currentTitle ?? "")")
         }
     }
     

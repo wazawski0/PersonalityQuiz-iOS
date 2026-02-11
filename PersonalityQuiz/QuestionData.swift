@@ -53,10 +53,10 @@ struct QuestionData {
             text: "How important is code formatting to you?",
             type: .ranged,
             answers: [
-                Answer(text: "Not important - functionality matters more", type: .hacker),
-                Answer(text: "Somewhat important - I follow team standards", type: .pragmatist),
-                Answer(text: "Very important - consistency is key", type: .architect),
-                Answer(text: "Critical - I use auto-formatters and linters religiously", type: .perfectionist)
+                Answer(text: "Not important", type: .hacker),
+                Answer(text: "Somewhat important", type: .pragmatist),
+                Answer(text: "Very important", type: .architect),
+                Answer(text: "Critical", type: .perfectionist)
             ]
         ),
         Question(
